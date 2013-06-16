@@ -8,4 +8,16 @@ module ApplicationHelper
       "#{base_title} - #{page_title}"
     end
   end
+
+  def flash_class(key)
+    case key
+    when :alert
+      "alert-error"
+    when :notice
+      "alert-success"
+    else
+      ""
+    end
+  end
+
 end

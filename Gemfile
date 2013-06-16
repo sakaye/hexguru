@@ -32,7 +32,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '1.1.2'
+  gem 'capybara'
   gem 'rb-fsevent', '0.9.1', :require => false
   gem 'growl'
   gem 'factory_girl_rails'

@@ -1,7 +1,13 @@
 Hex::Application.routes.draw do
+  devise_for :users
+
   root :to => 'static_pages#index'
 
-
+  devise_scope :user do
+    match '/signup' => 'devise/registrations#new'
+    match '/login' => 'devise/sessions#new'
+    match '/signout' => 'devise/sessions#destroy', via: :delete
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
