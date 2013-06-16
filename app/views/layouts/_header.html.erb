@@ -7,6 +7,7 @@
         </div>
         <ul class="nav">
           <li class="active"><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Cards", '#' %></li>
           <li><%= link_to "Decks", '#' %></li>
           <li><%= link_to "Deck Builder", '#' %></li>
           <li><%= link_to "Streams", '#' %></li>
@@ -29,7 +30,7 @@
             </li>
           <% else %>
             <li><%= link_to "Sign Up", signup_path %></li>
-            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Sign In", signin_path %></li>
           <% end %>
         </ul>
       </nav>

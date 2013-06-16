@@ -5,7 +5,7 @@ Hex::Application.routes.draw do
 
   devise_scope :user do
     match '/signup' => 'devise/registrations#new'
-    match '/login' => 'devise/sessions#new'
+    match '/signin' => 'devise/sessions#new'
     match '/signout' => 'devise/sessions#destroy', via: :delete
   end
   
