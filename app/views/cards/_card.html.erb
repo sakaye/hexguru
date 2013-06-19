@@ -1,3 +1,8 @@
-<li>
-  <%= link_to card.name, card %>
-</li>
+<tr>
+  <td>
+    <strong><%= card.name %></strong> - 
+    <small><%= card.trait %></small>
+  </td>
+  <td><%= card.card_type %></td>
+  <td><%= card.cost %></td>
+</tr>
