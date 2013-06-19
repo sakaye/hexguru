@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615232337) do
+ActiveRecord::Schema.define(:version => 20130616183638) do
+
+  create_table "cards", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.integer  "cost"
+    t.string   "card_type"
+    t.string   "rarity"
+    t.boolean  "game_type"
+    t.string   "trait"
+    t.text     "game_text"
+    t.text     "lore_text"
+    t.string   "restriction"
+    t.string   "faction"
+    t.string   "image"
+    t.integer  "attack"
+    t.integer  "defense"
+    t.integer  "set_number"
+    t.integer  "related_equipment"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "cards", ["color"], :name => "index_cards_on_color"
+  add_index "cards", ["name"], :name => "index_cards_on_name"
+  add_index "cards", ["set_number"], :name => "index_cards_on_set_number"
+  add_index "cards", ["trait"], :name => "index_cards_on_trait"
 
   create_table "users", :force => true do |t|
     t.string   "username",                               :null => false

@@ -8,6 +8,8 @@ Hex::Application.routes.draw do
     match '/signin' => 'devise/sessions#new'
     match '/signout' => 'devise/sessions#destroy', via: :delete
   end
+
+  resources :cards
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
