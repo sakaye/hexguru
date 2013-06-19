@@ -1,5 +1,13 @@
 @import 'bootstrap';
 
+/*  Colors  */
+
+$diamond: #e8e8e8;
+$blood: #b43de8;
+$sapphire: #4c50ff;
+$ruby: #ff444d;
+$wild: #56ff65;
+
 /*  Base  */
 
 body {
@@ -8,4 +16,21 @@ body {
 
 /*  Layout  */
 
+table#cards {
+  tr.Diamond {
+    background-color: $diamond;
+  }
+  tr.Blood {
+    background-color: $blood;
+  }
+  tr.Sapphire {
+    background-color: $sapphire;
+  }
+  tr.Ruby {
+    background-color: $ruby;
+  }
+  tr.Wild {
+    background-color: $wild;
+  }
+}
 
