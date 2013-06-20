@@ -1,2 +1,13 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<% provide(:title, @card.name) %>
+
+<h1><%= @card.name %></h1>
+
+<div class="row">
+  <div class="span4">
+    <%= image_tag "cards/"+@card.image %>
+  </div>
+  <div class="span4">
+    <h3><%= @card.card_type %> - <%= @card.trait %></h3>
+    <p><%= @card.attack %>ATK / <%=@card.defense %>DEF</p>
+  </div>
+</div>
