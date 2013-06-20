@@ -30,4 +30,10 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   
+  validates :username, presence: true,
+                       uniqueness: true,
+                       format: {
+                       with: /^[a-zA-Z0-9_-]+$/,
+                       message: 'Must be formated correctly. No special characters.'
+                       }
 end
