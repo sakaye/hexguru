@@ -7,17 +7,25 @@ $blood: #b43de8;
 $sapphire: #4c50ff;
 $ruby: #ff444d;
 $wild: #56ff65;
+$background: #fff;
 
 /*  Base  */
 
 body {
-  margin-top: 60px;
+  background: black url("background.png") fixed top center;
+}
+
+#main {
+  padding-top: 60px;
+  background-color: $background;
+  backgound-attachment: fixed;
 }
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
+  background-color: $background;
   color: #999;
   a {
     color: #555;
@@ -58,4 +66,23 @@ table#cards {
     background-color: $wild;
   }
 }
+
+.hero-unit {
+  padding: 30px 60px;
+}
+
+/*  Modules  */
+
+#carousel {
+  height: 300px;
+}
+
+#new-cards {
+  min-height: 300px;
+}
+
+
+
+
+
 
