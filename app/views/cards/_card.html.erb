@@ -1,10 +1,22 @@
 <tr>
   <td>
-    <%= image_tag "icon"+card.color+".png", size: "20x20" %>
+    <%= image_tag "icon"+card.color.name+".png", size: "20x20" %>
     <strong><%= link_to card.name, card %></strong> - 
-    <small><%= card.trait %></small>
+    <small>
+      <% card.traits.each do |k| %>
+        <%= k.name %>
+      <% end %>
+    </small>
   </td>
-  <td><%= card.card_type %></td>
+  <td>
+    <% card.types.each do |t| %>
+      <%= t.name %>
+    <% end %>
+  </td>
   <td><%= card.cost %></td>
-  <td><%= card.set_number %></td>
+  <td>
+    <% card.collections.each do |c| %>
+      <%= c.name %>
+    <% end %>
+  </td>
 </tr>

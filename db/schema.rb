@@ -11,33 +11,90 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616183638) do
+ActiveRecord::Schema.define(:version => 20130625042656) do
 
   create_table "cards", :force => true do |t|
     t.string   "name"
-    t.string   "color"
     t.integer  "cost"
-    t.string   "card_type"
-    t.string   "rarity"
     t.boolean  "game_type"
-    t.string   "trait"
     t.text     "game_text"
     t.text     "lore_text"
-    t.string   "restriction"
-    t.string   "faction"
     t.string   "image"
     t.integer  "attack"
     t.integer  "defense"
-    t.integer  "set_number"
-    t.integer  "related_equipment"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "color_id"
+    t.integer  "rarity_id"
+    t.integer  "faction_id"
+    t.boolean  "restriction"
   end
 
-  add_index "cards", ["color"], :name => "index_cards_on_color"
   add_index "cards", ["name"], :name => "index_cards_on_name"
-  add_index "cards", ["set_number"], :name => "index_cards_on_set_number"
-  add_index "cards", ["trait"], :name => "index_cards_on_trait"
+
+  create_table "cards_collections", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "collection_id"
+  end
+
+  create_table "cards_equipment", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "equipment_id"
+  end
+
+  create_table "cards_traits", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "trait_id"
+  end
+
+  create_table "cards_types", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "type_id"
+  end
+
+  create_table "collections", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "colors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "equipment", :force => true do |t|
+    t.string   "name"
+    t.text     "game_text"
+    t.integer  "type_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "factions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rarities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "traits", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username",                               :null => false

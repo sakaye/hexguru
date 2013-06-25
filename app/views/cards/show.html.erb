@@ -7,7 +7,15 @@
     <%= image_tag "cards/"+@card.image %>
   </div>
   <div class="span4">
-    <h3><%= @card.card_type %> - <%= @card.trait %></h3>
+    <h3>
+      <% @card.types.each do |t| %> 
+        <%= t.name %>
+      <% end %>
+      -
+      <% @card.traits.each do |k| %>
+        <%= k.name %>
+      <% end %>
+    </h3>
     <p><%= @card.attack %>ATK / <%=@card.defense %>DEF</p>
   </div>
 </div>
