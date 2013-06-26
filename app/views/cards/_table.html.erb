@@ -43,4 +43,12 @@
     <td>PVE</td>
     <td><%= @card.game_type ? "Yes" : "No" %></td>
   </tr>
+  <tr>
+    <td>Set</td>
+    <td>
+      <% @card.collections.each do |c| %>
+        <%= c.name %>
+      <% end %>
+    </td>
+  </tr>
 </table>
