@@ -23,7 +23,7 @@ body {
 
 footer {
   margin-top: 45px;
-  padding-top: 5px;
+  padding: 70px 0px;
   border-top: 1px solid #eaeaea;
   background-color: $background;
   color: #999;
@@ -48,24 +48,6 @@ footer {
 }
 
 /*  Layout  */
-
-table#cards {
-  tr.Diamond {
-    background-color: $diamond;
-  }
-  tr.Blood {
-    background-color: $blood;
-  }
-  tr.Sapphire {
-    background-color: $sapphire;
-  }
-  tr.Ruby {
-    background-color: $ruby;
-  }
-  tr.Wild {
-    background-color: $wild;
-  }
-}
 
 .hero-unit {
   padding: 30px 60px;

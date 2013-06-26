@@ -1,0 +1,46 @@
+<table class="table table-hover table-bordered">
+  <tr>
+    <td>Color</td>
+    <td><%= @card.color.name %></td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td><%= @card.cost %></td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>
+      <% @card.types.each do |t| %> 
+        <%= t.name %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>Atk/Def</td>
+    <td><%= @card.attack %>/<%= @card.defense %></td>
+  </tr>
+  <tr>
+    <td>Restriction</td>
+    <td><%= @card.restriction ? "Unique" : "None" %></td>
+  </tr>
+  <tr>
+    <td>Faction</td>
+    <td><%= @card.faction.name %></td>
+  </tr>
+  <tr>
+    <td>Game Text</td>
+    <td><%= @card.game_text %></td>
+  </tr>
+  <tr>
+    <td>Lore Text</td>
+    <td><%= @card.lore_text %></td>
+  </tr>
+  <tr>
+    <td>Rarity</td>
+    <td><%= @card.rarity.name %></td>
+  </tr>
+  <tr>
+    <td>PVE</td>
+    <td><%= @card.game_type ? "Yes" : "No" %></td>
+  </tr>
+</table>

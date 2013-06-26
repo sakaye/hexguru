@@ -1,0 +1,19 @@
+<%= simple_form_for(@card, :html => { :class => 'form-horizontal' }) do |f| %>
+  <%= f.input :name, input_html: { class: "span5" } %>
+  <%= f.input :cost, collection: 1..12 %>
+  <%= f.input :attack, collection: 1..12 %>
+  <%= f.input :defense, collection: 1..12 %>
+  <%= f.association :color, as: :radio_buttons, :item_wrapper_class => 'inline' %>
+  <%= f.association :types, as: :check_boxes, :item_wrapper_class => 'inline' %>
+  <%= f.association :rarity, as: :radio_buttons, :item_wrapper_class => 'inline' %>
+  <%= f.association :faction, as: :radio_buttons, :item_wrapper_class => 'inline' %>
+  <%= f.input :game_type, label: "PVE?" %>
+  <%= f.input :restriction, label: "Unique?" %>
+  <%= f.input :game_text, input_html: { rows: "4", class: "span5" } %>
+  <%= f.input :lore_text, input_html: { rows: "4", class: "span5" } %>
+  <%= f.input :image, input_html: { class: "span6" } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
