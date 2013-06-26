@@ -8,7 +8,7 @@
   <%= f.association :types, as: :check_boxes, :item_wrapper_class => 'inline' %>
   <%= f.association :rarity, as: :radio_buttons, :item_wrapper_class => 'inline' %>
   <%= f.association :faction, as: :radio_buttons, :item_wrapper_class => 'inline' %>
-  <%= f.association :traits %>
+  <%= f.association :traits, as: :check_boxes, :item_wrapper_class => 'inline' %>
   <%= f.input :game_type, label: "PVE?" %>
   <%= f.input :restriction, label: "Unique?" %>
   <%= f.input :game_text, input_html: { rows: "4", class: "span5" } %>

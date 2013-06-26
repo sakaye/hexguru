@@ -21,7 +21,8 @@
 
 class Card < ActiveRecord::Base
   attr_accessible :name, :cost, :type_ids, :color_id, :rarity_id, :game_type, :attack,
-                  :defense, :game_text, :lore_text, :restriction, :faction_id, :image
+                  :defense, :game_text, :lore_text, :restriction, :faction_id, :image,
+                  :collection_ids, :trait_ids
 
 
   belongs_to :color

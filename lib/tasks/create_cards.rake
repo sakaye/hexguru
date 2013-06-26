@@ -47,5 +47,14 @@ namespace :db do
     end
   end
 
-  
+  desc "Fill database with card collections"
+  task collections: :environment do
+    collections_ary = ["Shards of Fate"]
+    collections_ary.each do |t|
+      Collection.create(name: "#{t}")
+    end
+  end
+
+  desc "Fill database with all association card info"
+  task :alldata => [:colors, :types, :rarity, :factions, :traits, :collections]
 end
