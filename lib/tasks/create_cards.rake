@@ -58,7 +58,7 @@ namespace :db do
   desc "Fill database with card keywords"
   task keywords: :environment do
     keywords_ary = ["Crush", "Defensive", "Escalation", "Flight", "Inspire", "Invincible",
-                    "Lifedrain", "Rage", "Speed", "Spellshield", "Steadfast", "Swiftstrike"]
+                    "Lifedrain", "Rage", "Socketable", "Speed", "Spellshield", "Steadfast", "Swiftstrike"]
     keywords_ary.each do |t|
       Keyword.create(name: "#{t}")
     end

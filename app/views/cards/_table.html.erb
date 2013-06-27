@@ -8,10 +8,14 @@
     <td><%= @card.cost %></td>
   </tr>
   <tr>
-    <td>Type</td>
+    <td>Type/Traits</td>
     <td>
       <% @card.types.each do |t| %> 
         <%= t.name %>
+      <% end %>
+      --
+      <% @card.traits.each do |k| %>
+        <%= k.name %>
       <% end %>
     </td>
   </tr>
@@ -48,7 +52,7 @@
     <td><%= @card.rarity.name %></td>
   </tr>
   <tr>
-    <td>PVE</td>
+    <td>PVE Only</td>
     <td><%= @card.game_type ? "Yes" : "No" %></td>
   </tr>
   <tr>
