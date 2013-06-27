@@ -55,6 +55,18 @@ namespace :db do
     end
   end
 
+  desc "Fill database with card keywords"
+  task keywords: :environment do
+    keywords_ary = ["Crush", "Defensive", "Escalation", "Flight", "Inspire", "Invincible",
+                    "Lifedrain", "Rage", "Speed", "Spellshield", "Steadfast", "Swiftstrike"]
+    keywords_ary.each do |t|
+      Keyword.create(name: "#{t}")
+    end
+  end
+
   desc "Fill database with all association card info"
-  task :alldata => [:colors, :types, :rarity, :factions, :traits, :collections]
+  task :alldata => [:colors, :types, :rarity, :factions, :traits, :collections, :keywords]
 end
+
+
+

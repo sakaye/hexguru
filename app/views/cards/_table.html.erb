@@ -28,6 +28,14 @@
     <td><%= @card.faction.name %></td>
   </tr>
   <tr>
+    <td>Keywords</td>
+    <td>
+      <% @card.keywords.each do |k| %>
+        <%= k.name %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
     <td>Game Text</td>
     <td><%= @card.game_text %></td>
   </tr>

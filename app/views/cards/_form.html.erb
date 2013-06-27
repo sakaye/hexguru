@@ -11,6 +11,7 @@
   <%= f.association :traits, as: :check_boxes, :item_wrapper_class => 'inline' %>
   <%= f.input :game_type, label: "PVE?" %>
   <%= f.input :restriction, label: "Unique?" %>
+  <%= f.association :keywords, as: :check_boxes, :item_wrapper_class => 'inline' %>
   <%= f.input :game_text, input_html: { rows: "4", class: "span5" } %>
   <%= f.input :lore_text, input_html: { rows: "4", class: "span5" } %>
   <%= f.input :image, input_html: { class: "span5" } %>

@@ -22,7 +22,7 @@
 class Card < ActiveRecord::Base
   attr_accessible :name, :cost, :type_ids, :color_id, :rarity_id, :game_type, :attack,
                   :defense, :game_text, :lore_text, :restriction, :faction_id, :image,
-                  :collection_ids, :trait_ids
+                  :collection_ids, :trait_ids, :keyword_ids
 
 
   belongs_to :color
@@ -32,5 +32,6 @@ class Card < ActiveRecord::Base
   has_and_belongs_to_many :traits
   has_and_belongs_to_many :collections
   has_and_belongs_to_many :equipment
+  has_and_belongs_to_many :keywords
 
 end
