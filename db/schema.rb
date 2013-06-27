@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627173124) do
+ActiveRecord::Schema.define(:version => 20130627234006) do
 
   create_table "cards", :force => true do |t|
     t.string   "name"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(:version => 20130627173124) do
     t.integer  "defense"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "color_id"
-    t.integer  "rarity_id"
-    t.integer  "faction_id"
+    t.integer  "color_id",    :default => 1
+    t.integer  "rarity_id",   :default => 1
+    t.integer  "faction_id",  :default => 1
     t.boolean  "restriction"
   end
 
