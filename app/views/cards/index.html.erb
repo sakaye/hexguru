@@ -1,5 +1,15 @@
+<% if current_user.try(:admin?) %>
+  <%= link_to "Add Card", new_card_path, class: "btn btn-primary" %>
+<% end %>
+
 <div class="row">
-  <div class="span9">
+  <div class="span12">
+    <h3>Filters</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
     <table id="cards" class="table table-hover">
       <thead>
         <tr>
@@ -13,10 +23,5 @@
         <%= render @cards %>
       </tbody>
     </table>
-  </div>
-  <div class="span3">
-    <div class="well well-small">
-      <h3>Filter</h3>
-    </div>
   </div>
 </div>

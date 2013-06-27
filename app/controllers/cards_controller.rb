@@ -1,4 +1,11 @@
 class CardsController < ApplicationController
+  before_filter :admin_user, only: [:new, :create, :edit, :update]
+  before_filter :find_card, only: [:show, :edit, :update]
+
+  def index
+    @cards = Card.all
+  end
+
   def new
     @card = Card.new
   end
@@ -12,21 +19,14 @@ class CardsController < ApplicationController
       render 'new'
     end
   end
-
-  def index
-    @cards = Card.first
-  end
   
   def show
-    @card = Card.find(params[:id])
   end
 
   def edit
-    @card = Card.find(params[:id])
   end
 
   def update
-    @card = Card.find(params[:id])
     if @card.update_attributes(params[:card])
       flash[:notice] = "Card updated"
       redirect_to @card
@@ -34,4 +34,16 @@ class CardsController < ApplicationController
       render 'edit'
     end
   end
+
+  protected
+
+    def find_card
+      @card = Card.find(params[:id])
+    end
+
+  private
+
+    def admin_user
+      redirect_to signin_path, alert: "You must be signed in to do that." unless current_user && current_user.admin?
+    end
 end

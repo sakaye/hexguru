@@ -1,5 +1,9 @@
 <% provide(:title, @card.name) %>
 
+<% if current_user.try(:admin) %>
+  <%= link_to "Edit Card", edit_card_path, class: "btn btn-primary" %>
+<% end %>
+
 <div class="page-header">
   <h1>
     <%= @card.name %>
