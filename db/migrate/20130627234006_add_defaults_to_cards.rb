@@ -1,10 +1,8 @@
 class AddDefaultsToCards < ActiveRecord::Migration
   def up
-    change_table :cards do |t|
-      t.change :color_id, :integer, :default => 1
-      t.change :rarity_id, :integer, :default => 1
-      t.change :faction_id, :integer, :default => 1
-    end
+    change_column :cards, :color_id, :integer, :default => 1
+    change_column :cards, :rarity_id, :integer, :default => 1
+    change_column :cards, :faction_id, :integer, :default => 1
   end
 
   def down
