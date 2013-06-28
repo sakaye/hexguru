@@ -3,6 +3,7 @@ class AddDefaultsToCards < ActiveRecord::Migration
     change_column :cards, :color_id, :integer, :default => 1
     change_column :cards, :rarity_id, :integer, :default => 1
     change_column :cards, :faction_id, :integer, :default => 1
+    remove_column :cards, :trait
   end
 
   def down

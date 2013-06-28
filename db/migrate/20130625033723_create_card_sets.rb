@@ -9,6 +9,8 @@ class CreateCardSets < ActiveRecord::Migration
       t.integer :card_id
       t.integer :collection_id
     end
+
+    remove_column :cards, :card_set
   end
 
   def down

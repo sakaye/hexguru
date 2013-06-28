@@ -4,6 +4,9 @@ class CreateRarities < ActiveRecord::Migration
       t.string :name
       t.timestamps
     end
+
+    remove_column :cards, :rarity
+    add_column :cards, :rarity_id, :integer
   end
 
   def down

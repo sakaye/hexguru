@@ -4,6 +4,9 @@ class CreateFactions < ActiveRecord::Migration
       t.string :name
       t.timestamps
     end
+
+    remove_column :cards, :faction
+    add_column :cards, :faction_id, :integer
   end
 
   def down
