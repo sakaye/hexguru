@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(:version => 20130627234006) do
     t.string   "image"
     t.integer  "attack"
     t.integer  "defense"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.integer  "color_id",    :default => 1
     t.integer  "rarity_id",   :default => 1
     t.integer  "faction_id",  :default => 1
