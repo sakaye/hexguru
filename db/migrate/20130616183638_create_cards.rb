@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.string :name
       t.integer :cost
-      t.boolean :game_type
+      t.string :game_type
       t.text :game_text
       t.text :lore_text
       t.boolean :restriction
