@@ -6,7 +6,7 @@ class CreateFactions < ActiveRecord::Migration
     end
 
     remove_column :cards, :faction
-    add_column :cards, :faction_id, :integer
+    add_column :cards, :faction_id, :integer, :default => 1
   end
 
   def down

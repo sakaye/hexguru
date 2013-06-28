@@ -4,8 +4,6 @@ class CreateTypes < ActiveRecord::Migration
       t.string :name
       t.timestamps
     end
-
-    remove_column :cards, :card_type
   end
 
   def down

@@ -6,7 +6,7 @@ class CreateRarities < ActiveRecord::Migration
     end
 
     remove_column :cards, :rarity
-    add_column :cards, :rarity_id, :integer
+    add_column :cards, :rarity_id, :integer, :default => 1
   end
 
   def down
