@@ -5,7 +5,6 @@ class CreateFactions < ActiveRecord::Migration
       t.timestamps
     end
 
-    remove_column :cards, :faction
     add_column :cards, :faction_id, :integer, :default => 1
   end
 
