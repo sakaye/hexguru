@@ -1,7 +1,10 @@
 class AddTypeidtoCards < ActiveRecord::Migration
-  def change
+  def up
     change_table :cards do |t|
       t.integer :type_id
     end
+  end
+
+  def down
   end
 end

@@ -19,18 +19,16 @@ ActiveRecord::Schema.define(:version => 20130627173124) do
     t.boolean  "game_type"
     t.text     "game_text"
     t.text     "lore_text"
+    t.string   "restriction"
     t.string   "image"
     t.integer  "attack"
     t.integer  "defense"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "color_id"
-    t.integer  "rarity_id"
-    t.integer  "faction_id"
-    t.boolean  "restriction"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "color_id",    :default => 1
+    t.integer  "rarity_id",   :default => 1
+    t.integer  "faction_id",  :default => 1
   end
-
-  add_index "cards", ["name"], :name => "index_cards_on_name"
 
   create_table "cards_collections", :id => false, :force => true do |t|
     t.integer "card_id"
