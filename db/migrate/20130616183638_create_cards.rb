@@ -6,7 +6,7 @@ class CreateCards < ActiveRecord::Migration
       t.boolean :game_type
       t.text :game_text
       t.text :lore_text
-      t.string :restriction
+      t.boolean :restriction
       t.string :image
       t.integer :attack
       t.integer :defense
