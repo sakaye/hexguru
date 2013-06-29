@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   before_filter :find_card, only: [:show, :edit, :update]
 
   def index
-    @cards = Card.all
+    @cards = Card.find(:all, order: "name ASC")
   end
 
   def new

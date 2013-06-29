@@ -1,7 +1,7 @@
 <%= simple_form_for(@card, :html => { :class => 'form-horizontal' }) do |f| %>
   <%= f.input :name, input_html: { class: "span5" } %>
   <%= f.association :collections %>
-  <%= f.input :cost, collection: 1..12 %>
+  <%= f.input :cost, collection: ["X",1,2,3,4,5,6,7,8,9,10] %>
   <%= f.input :attack, collection: 1..12 %>
   <%= f.input :defense, collection: 1..12 %>
   <%= f.association :color, as: :radio_buttons, :item_wrapper_class => 'inline' %>

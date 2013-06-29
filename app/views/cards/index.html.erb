@@ -1,3 +1,5 @@
+<% provide(:title, "Cards") %>
+
 <% if current_user.try(:admin?) %>
   <%= link_to "Add Card", new_card_path, class: "btn btn-primary" %>
 <% end %>

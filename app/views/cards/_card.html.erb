@@ -1,12 +1,17 @@
 <tr>
   <td>
     <%= image_tag "icon"+card.color.name+".png", size: "20x20" %>
-    <strong><%= link_to card.name, card %></strong> - 
-    <small>
-      <% card.traits.each do |k| %>
-        <%= k.name %>
-      <% end %>
-    </small>
+    <strong>
+      <%= link_to card.name, card, data: { content: "#{image_tag("cards/"+card.image)}", html: true }, class: "card" %>
+    </strong>
+    <% if card.traits.any? %>
+      <small>
+        -
+        <% card.traits.each do |k| %>
+          <%= k.name %>
+        <% end %>
+      </small>
+    <% end %>
   </td>
   <td>
     <% card.types.each do |t| %>

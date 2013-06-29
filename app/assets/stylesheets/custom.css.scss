@@ -12,7 +12,7 @@ $background: #fff;
 /*  Base  */
 
 body {
-  background: black url("background.png") fixed top center;
+  background: #000 url("background.png") fixed top center;
 }
 
 #main {
@@ -23,7 +23,7 @@ body {
 
 footer {
   margin-top: 45px;
-  padding: 70px 0px;
+  padding: 40px 0px;
   border-top: 1px solid #eaeaea;
   background-color: $background;
   color: #999;
@@ -52,6 +52,12 @@ footer {
 .hero-unit {
   padding: 30px 60px;
 }
+.avatar {
+  float: left;
+}
+.gravatar {
+  margin: 2px;
+}
 
 /*  Modules  */
 
@@ -63,7 +69,9 @@ footer {
   min-height: 300px;
 }
 
-
+#newest-decks {
+  min-height: 500px;
+}
 
 
 
