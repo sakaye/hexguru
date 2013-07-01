@@ -7,22 +7,28 @@
   <!-- Carousel items -->
   <div class="carousel-inner">
     <div class="active item">
-      <%= image_tag "carousel/cards.png"%>
-      <div class="carousel-caption">
-        <p>Check out the card database</p>
-      </div>
+      <%= link_to( "http://hextcg.com/pvp-champions-ardent/", target: "_blank") do %>
+        <%= image_tag "carousel/ArdentChampions.png" %>
+        <div class="carousel-caption">
+          <p>PVP Champions - Ardent</p>
+        </div>
+      <% end %>
     </div>
     <div class="item">
-      <%= image_tag "carousel/decks.png"%>
-      <div class="carousel-caption">
-        <p>See what decks people are creating</p>
-      </div>
+      <%= link_to( "http://hextcg.com/art-feature-the-shinhare/", target: "_blank") do %>
+        <%= image_tag "carousel/ShinHare.png"%>
+        <div class="carousel-caption">
+          <p>Art Feature: The Shin'Hare</p>
+        </div>
+      <% end %>
     </div>
     <div class="item">
-      <%= image_tag "carousel/deckbuilder.png"%>
-      <div class="carousel-caption">
-        <p>Build your own decks here</p>
-      </div>
+      <%= link_to( "http://hextcg.com/pvp-champions-underworld/", target: "_blank") do %>
+        <%= image_tag "carousel/UnderworldChampions.png"%>
+        <div class="carousel-caption">
+          <p>PVP Champions - Underworld</p>
+        </div>
+      <% end %>
     </div>
   </div>
   <!-- Carousel nav -->
