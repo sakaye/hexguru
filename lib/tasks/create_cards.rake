@@ -33,15 +33,15 @@ namespace :db do
 
   desc "Fill database with card traits"
   task traits: :environment do
-    traits_ary = ["Coyotel", "Dwarf", "Elf", "Human", "Necrotic", "Orc", "Shin'Hare",
+    traits_ary = ["Coyotel", "Dwarf", "Elf", "Human", "Necrotic", "Orc", "Shin'hare",
                   "Shroomkin", "Vennen", "Beast", "Dinosaur", "Plant", "Spirit",
                   "Bird", "Kraken", "Mutant", "Dragon", "Voidtouched", "Robot",
                   "Harpy", "Tiger", "Elemental", "Great Wolf", "Skeleton", "Rock Beast",
-                  "Insect", "Gnoll", "Zombie", "Ranger", "Warrior", "Warlock",
+                  "Insect", "Gnoll", "Zombie", "Angel", "Ranger", "Warrior", "Warlock",
                   "Mage", "Cleric", "Concubunny", "Rogue", "Witch", "King", "Elder",
                   "Princess", "Gladiator", "Troop", "Trainer", "High Cleric",
                   "Vampire", "Trap", "Shapeshifter", "Tentacle", "Ballistics Dwarf",
-                  "Dream", "Avatar of Destruction", "Shrine", "Factory"]
+                  "Dream", "Avatar of Destruction", "Shrine", "Factory", "Doomsday Device"]
     traits_ary.each do |t|
       Trait.create(name: "#{t}")
     end

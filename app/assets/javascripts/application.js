@@ -22,6 +22,7 @@ $(document).ready(function(){
 
   $('.card').popover({
     trigger: 'hover',
-    placement: 'right'
+    placement: 'right',
+    container: 'body'
   })
 });

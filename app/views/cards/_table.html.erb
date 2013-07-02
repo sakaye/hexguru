@@ -13,15 +13,21 @@
       <% @card.types.each do |t| %> 
         <%= t.name %>
       <% end %>
-      --
-      <% @card.traits.each do |k| %>
-        <%= k.name %>
+      <% if @card.traits.any? %>
+        --
+        <% @card.traits.each do |k| %>
+          <%= k.name %>
+        <% end %>
       <% end %>
     </td>
   </tr>
   <tr>
     <td>Atk/Def</td>
-    <td><%= @card.attack %>/<%= @card.defense %></td>
+    <td>
+      <% if @card.attack %>
+        <%= @card.attack %>/<%= @card.defense %>
+      <% end %>
+    </td>
   </tr>
   <tr>
     <td>Restriction</td>

@@ -7,11 +7,33 @@
 <div class="row">
   <div class="span12">
     <h3>Filters</h3>
+    <div class="btn-toolbar">
+      <div class="btn-group" data-toggle="buttons-checkbox">
+        <button class="btn btn-small">Artifact</button>
+        <button class="btn btn-small">Troop</button>
+        <button class="btn btn-small">Basic</button>
+        <button class="btn btn-small">Quick</button>
+        <button class="btn btn-small">Contant</button>
+        <button class="btn btn-small">Resource</button>
+        <button class="btn btn-small">Champion</button>
+      </div>
+    </div>
+    <div class="btn-toolbar">
+      <div class="btn-group">
+        <button class="btn btn-small">Artifact</button>
+        <button class="btn btn-small">Blood</button>
+        <button class="btn btn-small">Diamond</button>
+        <button class="btn btn-small">Ruby</button>
+        <button class="btn btn-small">Sapphire</button>
+        <button class="btn btn-small">Wild</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="row">
   <div class="span12">
+    <p class="pull-right"><%= pluralize(@cards.count, "Card") %> found</p>
     <table id="cards" class="table table-hover">
       <thead>
         <tr>
