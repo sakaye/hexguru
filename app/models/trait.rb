@@ -12,4 +12,6 @@ class Trait < ActiveRecord::Base
   attr_accessible :name
 
   has_and_belongs_to_many :cards
+
+  default_scope order: "traits.name ASC"
 end

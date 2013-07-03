@@ -21,6 +21,8 @@ class CardsController < ApplicationController
   end
   
   def show
+    @comment = current_user.comments.build if signed_in?
+    @comments = @card.comments
   end
 
   def edit

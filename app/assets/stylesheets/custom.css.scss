@@ -74,5 +74,30 @@ footer {
 }
 
 
+/* Card Comments */
+#all-comments {
+  list-style: none;
+  .gravatar {
+    margin: 0px;
+    position: absolute;
+  } 
+  .content {
+    margin-left: 60px;
+  }
+  li {
+    margin-bottom: 20px;
+    p {
+      margin-bottom: 5px;
+    }
+    .user {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .timestamp {
+      color: #999;
+    }
+  }
+}
+
 
 

@@ -19,14 +19,21 @@
 
 <div class="row">
   <div class="span12">
-    <h2>Equipment</h2>
+    <h5>Equipment</h5>
     <p>Coming Soon</p>
   </div>
 </div>
 
 <div class="row">
   <div class="span12">
-    <h2>Comments</h2>
-    <p>Coming Soon</p>
+    <h5>Comments (<%= @card.comments.count %>)</h5>
+    <% if signed_in? %>
+      <%= render 'comment_form' %>
+    <% else %>
+      <p><%= link_to "Sign in", signin_path, class: "btn btn-primary" %> to comment.</p>
+    <% end %>
+    <ul id="all-comments" class="unstyled">
+      <%= render 'comments' %>
+    </ul>
   </div>
 </div>

@@ -1,0 +1,6 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.input :content, input_html: { rows: "4", class: "span6"} %>
+  <%= f.input :card_id, :as => :hidden, input_html: { value: "#{@card.id}" } %>
+
+  <%= f.button :submit, "Post", class: "btn btn-primary" %>
+<% end %>

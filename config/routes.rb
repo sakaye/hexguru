@@ -10,6 +10,7 @@ Hex::Application.routes.draw do
   end
 
   resources :cards
+  resources :comments, only: [:create, :destory]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

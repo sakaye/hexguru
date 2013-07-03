@@ -1,0 +1,14 @@
+<% @comments.each do |comment| %>
+<li class="comment">
+  <%= gravatar_for(comment.user) %>
+  <div class="content">
+    <p class="metadata">
+      <span class="user"><%= comment.user.username %></span>
+      <small class="timestamp"><%= time_ago_in_words(comment.created_at,) + " ago" %></small>
+    </p>
+    <div class="comment-text">
+      <p><%= comment.content %></p>
+    </div>
+  </div>
+</li>
+<% end %>

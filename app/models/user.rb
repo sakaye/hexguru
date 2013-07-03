@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
+  has_many :comments, dependent: :destroy
+
   
   validates :username, presence: true,
                        uniqueness: true,
