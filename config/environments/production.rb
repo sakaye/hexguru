@@ -15,7 +15,9 @@ Hex::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
+  config.assets.enabled = true
+  config.assets.initialize_on_precompile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -44,6 +46,8 @@ Hex::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://hexguru.s3.amazonaws.com/"
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+  config.assets.prefix = "/production/assets"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
