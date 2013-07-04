@@ -1,12 +1,13 @@
 if defined?(AssetSync)
   AssetSync.configure do |config|
     config.fog_provider = 'AWS'
+    config.fog_directory = ENV['FOG_DIRECTORY']
     config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
     config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-    config.fog_directory = ENV['FOG_DIRECTORY']
+    
     
     # Increase upload performance by configuring your region
-    config.fog_region = 'us-standard'
+    # config.fog_region = 'us-standard'
     #
     # Don't delete files from the store
     # config.existing_remote_files = "keep"
