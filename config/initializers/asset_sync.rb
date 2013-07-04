@@ -6,7 +6,7 @@ if defined?(AssetSync)
     config.fog_directory = ENV['FOG_DIRECTORY']
     
     # Increase upload performance by configuring your region
-    config.fog_region = 'us-standardS'
+    config.fog_region = 'us-standard'
     #
     # Don't delete files from the store
     # config.existing_remote_files = "keep"
