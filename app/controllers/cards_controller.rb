@@ -42,7 +42,7 @@ class CardsController < ApplicationController
   end
 
   def filter
-    @cards = Card.where("color_id = ?", params[:color_id])
+    @cards = Card.filter(params)
   end
 
   protected

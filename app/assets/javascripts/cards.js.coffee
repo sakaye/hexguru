@@ -17,7 +17,10 @@ jQuery ->
   $('[rel=filter]').click ->
     option = $(this).data()
     if option.color
-      FILTERS.color_id.push(option.color)
+      if $.inArray(option.color, FILTERS.color_id) != -1
+        FILTERS.color_id = $.grep(FILTERS.color_id, (x) ->  x != option.color )
+      else
+        FILTERS.color_id.push(option.color)
     else if option.type
       FILTERS.type_id.push(option.type)
     else if option.rarity
