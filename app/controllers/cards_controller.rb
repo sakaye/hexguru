@@ -3,7 +3,11 @@ class CardsController < ApplicationController
   before_filter :find_card, only: [:show, :edit, :update]
 
   def index
-    @cards = Card.find(:all, order: "name ASC")
+    @cards = Card.search(params[:search])
+    @types = Type.all
+    @colors = Color.all
+    @rarties = Rarity.all
+    @factions = Faction.all
   end
 
   def new
@@ -35,6 +39,10 @@ class CardsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def filter
+    @cards = Card.where("color_id = ?", params[:color_id])
   end
 
   protected

@@ -2,6 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-$('.carousel').carousel({
-  interval: 4000
-});
+jQuery(document).ready ->
+  $('.carousel').carousel
+    interval: 4000

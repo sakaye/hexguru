@@ -12,17 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require bootstrap
-
-$(document).ready(function(){
-  $('.carousel').carousel({
-    interval: 4000
-  });
-
-  $('.card').popover({
-    trigger: 'hover',
-    placement: 'right',
-    container: 'body'
-  })
-});
+//= require_tree .

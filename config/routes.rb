@@ -10,6 +10,8 @@ Hex::Application.routes.draw do
   end
 
   resources :cards
+  match '/filter' => 'cards#filter', via: :post
+  
   resources :comments, only: [:create, :destory]
   
   # The priority is based upon order of creation:

@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= image_tag "icon"+card.color.name+".png", size: "20x20" %>
+    <i class="icon-<%= card.color.name %>"></i>
     <strong>
       <%= link_to card.name, card, data: { content: "#{image_tag("cards/shards_of_fate/"+card.image)}", html: true }, class: "card" %>
     </strong>

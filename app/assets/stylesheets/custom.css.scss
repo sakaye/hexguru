@@ -9,6 +9,32 @@ $ruby: #ff444d;
 $wild: #56ff65;
 $background: #fff;
 
+/*  Color Icons  */
+.icon-Blood {
+  background-image: url("icons.png");
+  background-position: 0px 0px;
+}
+.icon-Diamond {
+  background-image: url("icons.png");
+  background-position: -20px 0px;
+}
+.icon-Ruby {
+  background-image: url("icons.png");
+  background-position: -40px 0px;
+}
+.icon-Sapphire {
+  background-image: url("icons.png");
+  background-position: 0px -20px;
+}
+.icon-Wild {
+  background-image: url("icons.png");
+  background-position: -21px -20px;
+}
+.icon-Artifact {
+  background-image: url("icons.png");
+  background-position: -40px -20px;
+}
+
 /*  Base  */
 
 body {

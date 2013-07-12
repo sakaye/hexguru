@@ -1,0 +1,14 @@
+<p><%= pluralize(@cards.count, "Card") %> found</p>
+<table id="cards" class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Cost</th>
+      <th>Set</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @cards %>
+  </tbody>
+</table>
