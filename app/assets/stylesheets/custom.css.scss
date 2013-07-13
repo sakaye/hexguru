@@ -38,13 +38,8 @@ $background: #fff;
 /*  Base  */
 
 body {
+  margin-top: 60px;
   background: #000 url("background.png") fixed top center;
-}
-
-#main {
-  padding-top: 60px;
-  background-color: $background;
-  backgound-attachment: fixed;
 }
 
 footer {
