@@ -6,7 +6,7 @@ class CardsController < ApplicationController
     @cards = Card.search(params[:search])
     @types = Type.all
     @colors = Color.all
-    @rarties = Rarity.all
+    @rarities = Rarity.all
     @factions = Faction.all
   end
 

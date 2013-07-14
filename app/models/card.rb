@@ -38,17 +38,25 @@ class Card < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      self.includes(:color, :types, :collections, :traits).where('name LIKE ?', "%#{search}%")
     else
-      all
+      self.includes(:color, :types, :collections, :traits).all
     end
   end
 
   def self.filter(params)
-    if params
-      where("color_id = ?", params[:color_id])
+    filters = {}
+    type_ids = {}
+    filters[:color_id] = params[:color_id] if params[:color_id]
+    type_ids[:id] = params[:type_id]
+    filters[:types] = type_ids if params[:type_id]
+    filters[:rarity_id] = params[:rarity_id] if params[:rarity_id]
+    filters[:faction_id] = params[:faction_id] if params[:faction_id]
+
+    if filters.any?
+      self.includes(:color, :types, :collections, :traits).where(filters)
     else
-      all
+      self.includes(:color, :types, :collections, :traits).all
     end
   end
 end

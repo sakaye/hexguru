@@ -1,13 +1,13 @@
 <h3>Filters</h3>
 <div class="btn-toolbar">
-  <div class="btn-group" data-toggle="buttons-checkbox">
+  <div id="colors" class="btn-group">
     <% @colors.each do |t| %>
       <button class="btn btn-small" rel="filter" data-color="<%= t.id %>"><%= t.name %></button>
     <% end %>
   </div>
 </div>
 <div class="btn-toolbar">
-  <div class="btn-group" data-toggle="buttons-checkbox">
+  <div id="types" class="btn-group">
     <% @types.each do |t| %>
       <% if t.name == "Quick Action" %>
         <button class="btn btn-small" rel="filter" data-type="<%= t.id %>">Quick</button>
@@ -20,14 +20,14 @@
   </div>
 </div>
 <div class="btn-toolbar">
-  <div class="btn-group" data-toggle="buttons-checkbox">
-    <% @rarties.each do |t| %>
+  <div id="rarities" class="btn-group">
+    <% @rarities.each do |t| %>
       <button class="btn btn-small" rel="filter" data-rarity="<%= t.id %>"><%= t.name %></button>
     <% end %>
   </div>
 </div>
 <div class="btn-toolbar">
-  <div class="btn-group" data-toggle="buttons-checkbox">
+  <div id="factions" class="btn-group">
     <% @factions.each do |t| %>
       <button class="btn btn-small" rel="filter" data-faction="<%= t.id %>"><%= t.name %></button>
     <% end %>

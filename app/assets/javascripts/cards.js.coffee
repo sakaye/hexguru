@@ -2,11 +2,42 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-FILTERS = 
-  color_id: [],
-  type_id: [],
-  rarity_id: [],
-  faction_id: []
+get_filters = ->
+  filters = 
+    color_id: [],
+    type_id: [],
+    rarity_id: [],
+    faction_id: []
+
+  $colors = $('#colors').find(".active")
+  $types = $('#types').find(".active")
+  $rarities = $('#rarities').find(".active")
+  $factions = $('#factions').find(".active")
+  
+  if $colors.length > 0
+    for c in $colors
+      filters.color_id.push $(c).attr("data-color")
+
+  if $types.length > 0
+    for c in $types
+      filters.type_id.push $(c).attr("data-type")
+
+  if $rarities.length > 0
+    for c in $rarities
+      filters.rarity_id.push $(c).attr("data-rarity")
+
+  if $factions.length > 0
+    for c in $factions
+      filters.faction_id.push $(c).attr("data-faction")
+    
+  filters
+
+send_data = () ->
+  $.ajax({
+    type: "POST",
+    url: "/filter",
+    data: get_filters()
+  })
 
 jQuery ->
   $('.card').popover
@@ -14,24 +45,11 @@ jQuery ->
     placement: 'right',
     container: 'body'
 
-  # $('[rel=filter]').click ->
-  #   option = $(this).data()
-  #   if option.color
-  #     if $.inArray(option.color, FILTERS.color_id) != -1
-  #       FILTERS.color_id = $.grep(FILTERS.color_id, (x) ->  x != option.color )
-  #     else
-  #       FILTERS.color_id.push(option.color)
-  #   else if option.type
-  #     FILTERS.type_id.push(option.type)
-  #   else if option.rarity
-  #     FILTERS.rarity_id.push(option.rarity)
-  #   else if option.faction
-  #     FILTERS.faction_id.push(option.faction)    
-    
-  #   options = $.param(FILTERS)
-  #   console.log options
-  #   $.ajax({
-  #     type: "POST",
-  #     url: "/filter",
-  #     data: options
-  #   })
+  $('[rel=filter]').on 'click', ->
+    # Toggle active/inactive
+    if $(this).hasClass("active")
+        $(this).removeClass("active")
+    else
+        $(this).addClass("active")
+    send_data()
+    #console.log get_filters()
