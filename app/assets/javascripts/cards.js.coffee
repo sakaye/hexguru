@@ -37,13 +37,17 @@ send_data = () ->
     type: "POST",
     url: "/filter",
     data: get_filters()
+    success: ->
+      $('.card').popover(options)
   })
 
+options =
+  trigger: 'hover',
+  placement: 'right',
+  container: 'body'
+
 jQuery ->
-  $('.card').popover
-    trigger: 'hover',
-    placement: 'right',
-    container: 'body'
+  $('.card').popover(options)
 
   $('[rel=filter]').on 'click', ->
     # Toggle active/inactive
@@ -53,3 +57,9 @@ jQuery ->
         $(this).addClass("active")
     send_data()
     #console.log get_filters()
+
+
+
+
+
+

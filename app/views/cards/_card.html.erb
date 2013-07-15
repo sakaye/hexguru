@@ -20,8 +20,6 @@
   </td>
   <td><%= card.cost %></td>
   <td>
-    <% card.collections.each do |c| %>
-      <%= c.name %>
-    <% end %>
+    <%= card.rarity.name %>
   </td>
 </tr>

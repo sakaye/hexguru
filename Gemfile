@@ -8,13 +8,12 @@ gem 'devise'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'aws-sdk'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'spork'
   gem 'guard-rspec'
@@ -41,10 +40,6 @@ group :test do
   gem 'rb-fsevent', '0.9.1', :require => false
   gem 'growl'
   gem 'factory_girl_rails'
-end
-
-group :production do
-  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password

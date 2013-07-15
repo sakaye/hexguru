@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20130702181135) do
   create_table "cards", :force => true do |t|
     t.string   "name"
     t.string   "cost"
-    t.boolean  "game_type"
+    t.string   "game_type"
     t.text     "game_text"
     t.text     "lore_text"
     t.boolean  "restriction"
