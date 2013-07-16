@@ -17,6 +17,8 @@
 # Ignore public assests directory.
 /public/production/
 
+/config/database.yml
+
 .DS_STORE
 *.ai
 *.psd
