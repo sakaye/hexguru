@@ -1,4 +1,8 @@
 require "bundler/capistrano"
+set :default_environment, {
+
+'PATH' => "$HOME/.rvm/scripts/rvm:$PATH"
+}
 
 server "198.199.112.167", :web, :app, :db, primary: true
 
