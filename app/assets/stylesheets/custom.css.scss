@@ -11,27 +11,27 @@ $background: #fff;
 
 /*  Color Icons  */
 .icon-Blood {
-  background-image: url("icons.png");
+  background-image: image-url("icons.png");
   background-position: 0px 0px;
 }
 .icon-Diamond {
-  background-image: url("icons.png");
+  background-image: image-url("icons.png");
   background-position: -20px 0px;
 }
 .icon-Ruby {
-  background-image: url("icons.png");
+  background-image: image-url("icons.png");
   background-position: -40px 0px;
 }
 .icon-Sapphire {
-  background-image: url("icons.png");
+  background-image: image-url("icons.png");
   background-position: 0px -20px;
 }
 .icon-Wild {
-  background-image: url("icons.png");
+  background-image: image-url("icons.png");
   background-position: -21px -20px;
 }
 .icon-Artifact {
-  background-image: url("icons.png");
+  background-image: image-url("icons.png");
   background-position: -40px -20px;
 }
 
@@ -39,7 +39,7 @@ $background: #fff;
 
 body {
   margin-top: 60px;
-  background: #000 url("background.png") fixed top center;
+  background: #000 image-url("background.png") fixed top center;
 }
 
 footer {
