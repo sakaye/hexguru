@@ -4,19 +4,19 @@
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
-#  cost        :integer
+#  cost        :string(255)
 #  game_type   :boolean
 #  game_text   :text
 #  lore_text   :text
+#  restriction :boolean
 #  image       :string(255)
 #  attack      :integer
 #  defense     :integer
+#  color_id    :integer          default(1)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  color_id    :integer
-#  rarity_id   :integer
-#  faction_id  :integer
-#  restriction :boolean
+#  rarity_id   :integer          default(1)
+#  faction_id  :integer          default(1)
 #
 
 class Card < ActiveRecord::Base

@@ -11,6 +11,129 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130702181135) do
+
+  create_table "cards", :force => true do |t|
+    t.string   "name"
+    t.string   "cost"
+    t.boolean  "game_type"
+    t.text     "game_text"
+    t.text     "lore_text"
+    t.boolean  "restriction"
+    t.string   "image"
+    t.integer  "attack"
+    t.integer  "defense"
+    t.integer  "color_id",    :default => 1
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "rarity_id",   :default => 1
+    t.integer  "faction_id",  :default => 1
+  end
+
+  create_table "cards_collections", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "collection_id"
+  end
+
+  create_table "cards_equipment", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "equipment_id"
+  end
+
+  create_table "cards_keywords", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "keyword_id"
+  end
+
+  create_table "cards_traits", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "trait_id"
+  end
+
+  create_table "cards_types", :id => false, :force => true do |t|
+    t.integer "card_id"
+    t.integer "type_id"
+  end
+
+  create_table "collections", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "colors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "card_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["card_id", "user_id", "created_at"], :name => "index_comments_on_card_id_and_user_id_and_created_at"
+
+  create_table "equipment", :force => true do |t|
+    t.string   "name"
+    t.text     "game_text"
+    t.integer  "type_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "factions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "keywords", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rarities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "traits", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username",                                  :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.boolean  "admin",                  :default => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end

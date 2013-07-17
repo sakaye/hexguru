@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer          not null, primary key
+#  card_id    :integer
+#  user_id    :integer
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Comment < ActiveRecord::Base
   attr_accessible :card_id, :content
 
