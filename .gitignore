@@ -24,3 +24,5 @@
 *.psd
 *.png
 .elasticbeanstalk/
+.vagrant
+Vagrantfile
