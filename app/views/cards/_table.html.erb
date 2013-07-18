@@ -21,18 +21,14 @@
       <% end %>
     </td>
   </tr>
+  <% if @card.attack %>
   <tr>
     <td>Atk/Def</td>
     <td>
-      <% if @card.attack %>
-        <%= @card.attack %>/<%= @card.defense %>
-      <% end %>
+      <%= @card.attack %>/<%= @card.defense %>
     </td>
   </tr>
-  <tr>
-    <td>Restriction</td>
-    <td><%= @card.restriction ? "Unique" : "None" %></td>
-  </tr>
+  <% end %>
   <tr>
     <td>Faction</td>
     <td><%= @card.faction.name %></td>
@@ -60,6 +56,10 @@
   <tr>
     <td>PVE Only</td>
     <td><%= @card.game_type ? "Yes" : "No" %></td>
+  </tr>
+  <tr>
+    <td>Restriction</td>
+    <td><%= @card.restriction ? "Unique" : "None" %></td>
   </tr>
   <tr>
     <td>Set</td>

@@ -40,7 +40,7 @@ class Card < ActiveRecord::Base
     if search
       self.includes(:color, :types, :rarity, :traits).where('name LIKE ?', "%#{search}%")
     else
-      self.includes(:color, :types, :rarity, :traits).all
+      self.includes(:color, :types, :rarity, :traits).find(:all, :order => 'name')
     end
   end
 
@@ -56,7 +56,15 @@ class Card < ActiveRecord::Base
     if filters.any?
       self.includes(:color, :types, :rarity, :traits).where(filters)
     else
-      self.includes(:color, :types, :rarity, :traits).all
+      self.includes(:color, :types, :rarity, :traits).find(:all, :order => 'name')
     end
   end
 end
+
+
+
+
+
+
+
+
