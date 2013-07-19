@@ -26,3 +26,4 @@
 .elasticbeanstalk/
 .vagrant
 Vagrantfile
+*.bz2
