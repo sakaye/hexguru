@@ -43,11 +43,11 @@
   </tr>
   <tr>
     <td>Game Text</td>
-    <td><%= @card.game_text %></td>
+    <td><%= simple_format(@card.game_text) %></td>
   </tr>
   <tr>
     <td>Lore Text</td>
-    <td><%= @card.lore_text %></td>
+    <td><%= simple_format(@card.lore_text) %></td>
   </tr>
   <tr>
     <td>Rarity</td>
