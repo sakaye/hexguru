@@ -53,6 +53,7 @@ gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem "capistrano-db-tasks", require: false
 
 # To use debugger
 # gem 'debugger'
