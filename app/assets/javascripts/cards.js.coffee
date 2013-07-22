@@ -52,9 +52,9 @@ jQuery ->
   $('[rel=filter]').on 'click', ->
     # Toggle active/inactive
     if $(this).hasClass("active")
-        $(this).removeClass("active")
+      $(this).removeClass("active")
     else
-        $(this).addClass("active")
+      $(this).addClass("active")
     send_data()
     #console.log get_filters()
 
