@@ -1,6 +1,8 @@
 Hex::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.assets.enabled = true
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -16,7 +18,6 @@ Hex::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
-  # config.assets.enabled = true
   # config.assets.initialize_on_precompile = true
 
   # Generate digests for assets URLs
