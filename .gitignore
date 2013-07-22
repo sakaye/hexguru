@@ -16,6 +16,7 @@
 
 # Ignore public assests directory.
 /public/production/
+/public/assets/
 
 /config/database.yml
 
