@@ -1,7 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
 get_filters = ->
   filters = 
     color_id: [],
@@ -46,7 +42,7 @@ options =
   placement: 'right',
   container: 'body'
 
-jQuery ->
+$ ->
   $('.card').popover(options)
 
   $('[rel=filter]').on 'click', ->
@@ -57,9 +53,3 @@ jQuery ->
       $(this).addClass("active")
     send_data()
     #console.log get_filters()
-
-
-
-
-
-
