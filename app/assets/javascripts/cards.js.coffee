@@ -33,16 +33,61 @@ send_data = () ->
     type: "POST",
     url: "/filter",
     data: get_filters()
-    success: ->
+    dataType: "json"
+    success: (card_data) ->
+      render_table(card_data)
       $('.card').popover(options)
   })
+
+render_table = (card_data) ->
+  html = """
+    <p>#{card_data.length} Cards found</p>
+      <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Cost</th>
+          <th>Rarity</th>
+        </tr>
+      </thead>
+      <tbody>"""
+  for c in card_data
+    html += """
+      <tr>
+        <td>
+          <i class="icon-#{c.color.name}"></i>
+          <strong>
+            <a class="card" href="#">#{c.name}</a>
+          </strong>"""
+    if c.traits.length > 0
+      html += "<small>- "
+      for t in c.traits
+        html += t.name+ " "      
+      html += "</small>"
+    html += "</td>"
+    html += "<td>"
+    if c.types.length > 0
+      for t in c.types
+        html += t.name
+    html += """
+      </td>
+      <td>#{c.cost}</td>
+      <td>
+        #{c.rarity.name}
+      </td>
+      </tr>"""
+  html += "</tbody>
+      </table>"
+  $('#cards').html(html)
 
 options =
   trigger: 'hover',
   placement: 'right',
   container: 'body'
 
-$ ->
+jQuery ->
+  console.log "Test"
   $('.card').popover(options)
 
   $('[rel=filter]').on 'click', ->

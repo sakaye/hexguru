@@ -3,7 +3,7 @@
   <%= f.association :collections %>
   <%= f.input :cost, collection: ["X",0,1,2,3,4,5,6,7,8,9,10,11,12] %>
   <%= f.input :attack, collection: 0..12 %>
-  <%= f.input :defense, collection: [1,2,3,4,5,6,7,8,9,10,20] %>
+  <%= f.input :defense, collection: [0,1,2,3,4,5,6,7,8,9,10,20] %>
   <%= f.association :color, as: :radio_buttons, :item_wrapper_class => 'inline' %>
   <%= f.association :types, as: :check_boxes, :item_wrapper_class => 'inline' %>
   <%= f.association :rarity, as: :radio_buttons, :item_wrapper_class => 'inline' %>

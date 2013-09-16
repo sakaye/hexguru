@@ -1,0 +1,72 @@
+<% provide(:title, "Deck Builder") %>
+
+<div class="row">
+  <!-- <form id="deck_builder" name="deck_builder" method="post"> -->
+    <div class="span9">
+      <div class="row">
+        <div class="span9">
+          <h3>Build a deck</h3>
+          <label class="string" for="deck_name">Deck Name</label>
+          <input autofocus="autofocus" class="string form-control span9" id="deck_name" name="deck[name]" size="50" type="text">
+        </div>
+      </div>
+      <!-- Card List -->
+      <div id="card_list">
+        <div class="row">
+          <div class="span9">
+            <%= render 'filters' %>
+          </div>
+        </div>
+        <div class="row">
+          <div id="cards" class="span9">
+            <%= render 'card_table' %>
+          </div>
+        </div>
+      </div>
+      <!-- Guide Chapters -->
+      <div id="chapter_list">
+        <div class="row">
+          <div class="span9">
+            <h4>Chapter(s)</h4>
+            <input class="string span9" id="chapter1_title" name="chapter_title" placeholder="Chapter title" size="50" type="text">
+            <textarea class="wysihtml5 form-control span9" id="chapter1" rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="span3">
+      <div class="row">
+        <div class="span3">
+          <h4>Deck Settings</h4>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="">
+              PVE?
+            </label>
+          </div>
+          <div>
+            <label><b>Deck Type</b></label>
+            <select class="form-control">
+              <option>--</option>
+              <option>Aggro</option>
+              <option>Midrange</option>
+              <option>Burn</option>
+              <option>Mill</option>
+              <option>Control</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" name="submit" value="Create Deck" class="btn btn-primary">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">
+          <h4>Deck List</h4>
+        </div>
+      </div>
+    </div>
+  <!-- </form> -->
+</div>
+

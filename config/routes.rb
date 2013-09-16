@@ -1,4 +1,5 @@
 Hex::Application.routes.draw do
+
   devise_for :users
 
   root :to => 'static_pages#index'
@@ -11,6 +12,8 @@ Hex::Application.routes.draw do
 
   resources :cards
   match '/filter' => 'cards#filter', via: :post
+
+  resources :decks
   
   resources :comments, only: [:create, :destory]
   

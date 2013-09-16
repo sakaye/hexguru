@@ -2,7 +2,7 @@
 <div class="btn-toolbar">
   <div id="colors" class="btn-group">
     <% @colors.each do |t| %>
-      <button class="btn btn-default btn-small" rel="filter" data-color="<%= t.id %>"><%= t.name %></button>
+      <button class="btn btn-small" rel="filter" data-color="<%= t.id %>"><%= t.name %></button>
     <% end %>
   </div>
 </div>

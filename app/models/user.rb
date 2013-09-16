@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :comments, dependent: :destroy
+  has_many :decks, dependent: :destroy
 
   
   validates :username, presence: true,

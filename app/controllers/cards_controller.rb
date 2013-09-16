@@ -42,6 +42,7 @@ class CardsController < ApplicationController
 
   def filter
     @cards = Card.filter(params)
+    render :json => @cards.to_json(:include => { :traits => { :only => :name }, :types => { :only => :name }, :rarity => { :only => :name}, :color => { :only => :name}})
   end
 
   protected

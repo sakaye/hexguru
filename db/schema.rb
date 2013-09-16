@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702181135) do
+ActiveRecord::Schema.define(:version => 20130725035814) do
 
   create_table "cards", :force => true do |t|
     t.string   "name"
@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(:version => 20130702181135) do
   end
 
   add_index "comments", ["card_id", "user_id", "created_at"], :name => "index_comments_on_card_id_and_user_id_and_created_at"
+
+  create_table "decks", :force => true do |t|
+    t.string   "name"
+    t.boolean  "pve"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "equipment", :force => true do |t|
     t.string   "name"
