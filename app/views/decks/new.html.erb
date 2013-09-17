@@ -64,9 +64,33 @@
       <div class="row">
         <div class="span3">
           <h4>Deck List</h4>
+          <div id="deck_contents">
+          </div>
+          <h4>Sideboard</h4>
+          <div id="sideboard_contents">
+          </div>
         </div>
       </div>
     </div>
   <!-- </form> -->
 </div>
+
+<script id="deck_template">
+  <div class="card card_{{=entry.card.id}}" data-card-id="{{=entry.card.id}}">
+    <select class="card_quantity">
+      <option {{= entry.quantity == 1 ? "selected" : ""}} >1</option>
+      <option {{= entry.quantity == 2 ? "selected" : ""}} >2</option>
+      <option {{= entry.quantity == 3 ? "selected" : ""}} >3</option>
+      <option {{= entry.quantity == 4 ? "selected" : ""}} >4</option>
+    </select>
+    <div class="card_name">
+      {{=entry.card.name}}
+    </div>
+    <div class="remove_card">
+      x
+    </div>
+  </div>
+</script>
+
+
 
